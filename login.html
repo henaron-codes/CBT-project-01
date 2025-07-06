@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online CBT Exam Portal</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css" />
+    <link rel="stylesheet" href="bootfiles/bootstrap.css" />
+    <link rel="stylesheet" href="bootfiles/animate.css-main/animate.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top nava shadow-5 bg-light">
+      <div class="container">
+        <small class="text-dark"><i>powered by</i></small>
+        <a class="navbar-brand hena animate__animated animate__zoomIn" href="#"
+          >Henaron <span class="teck">Tech.</span></a
+        >
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa fa-bars"></i>
+        </button>
+
+        <div
+          id="navbarNav"
+          class="collapse navbar-collapse naaav animate__animated animate__fadeInDown"
+        >
+          <ul
+            class="navbar-nav ml-auto text-center text-lg-end animate__animated animate__pulse"
+            data-in="fadeInDown"
+            data-out="fadeOutUp"
+          >
+            <li class="nav-item">
+              <a
+                class="nav-link pb-1 border-bottom border-primary border-0 border-hover"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item smooth-menu">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <form
+        action="questions.html"
+        onsubmit="return cbtFn()"
+        class="shadow p-4 border rounded bg-white"
+      >
+        <h1 class="text-center">Exam Portal</h1>
+        <p class="text-center mb-4">Enter your login details to begin.</p>
+
+        <div class="form-group">
+          <label for="fn">First Name:</label>
+          <input
+            type="text"
+            id="fn"
+            class="form-control"
+            name="firstname"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="ln">Last Name:</label>
+          <input
+            type="text"
+            id="ln"
+            class="form-control"
+            name="lastname"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="reg">Registration No:</label>
+          <input
+            type="text"
+            id="reg"
+            class="form-control"
+            name="regnumber"
+            required
+          />
+        </div>
+
+        <div class="text-center">
+          <input type="submit" class="btn btn-primary mt-3" value="Login" />
+        </div>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 text-white">
+      <p>&copy; 2025 HenaronTech CBT Exams. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="bootfiles/jquery-slim.min.js"></script>
+    <script src="bootfiles/popper.min.js"></script>
+    <script src="bootfiles/bootstrap.js"></script>
+    <script src="bootfiles/bootstrap.bundle.js"></script>
+    <script src="bootfiles/alert.js"></script>
+    <script src="scripts.js"></script>
+  </body>
+</html>

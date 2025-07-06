@@ -1,0 +1,95 @@
+<!-- questions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henaron Tech Online CBT Exam Portal</title>
+    <link rel="stylesheet" href="fontawesome-free-6.4.0-web/css/all.css">
+    <link rel="stylesheet" href="bootfiles/bootstrap.css">
+    <link rel="stylesheet" href="bootfiles/animate.css-main/animate.min.css">
+    <link rel="stylesheet" href="bootfiles/bootstrap.css">
+    <link rel="stylesheet" href="bootfiles/bootstrap.css.map">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- Optional Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+
+     <!-- Header Section -->
+
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top nava shadow-5">
+        <div class="container">
+         <small class="text-dark"><i>powered by</i></small> <a class="navbar-brand hena animate__animated animate__zoomIn" href="#">Henaron <span class="teck">Tech.</span></a>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"></i>
+          </button>
+          
+          <div id="navbarNav" class="collapse navbar-collapse naaav animate__animated animate__fadeInDown ">
+            <ul class="navbar-nav ml-auto text-center text-lg-end animate__animated animate__pulse" data-in="fadeInDown" data-out="fadeOutUp">
+              <li class="nav-item"><a class="nav-link pb-1 border-bottom border-primary border-0 border-hover" href="index.html">Home</a></li>
+              <li class="nav-item smooth-menu"><a class="nav-link" href="about.html">About</a></li>
+              <!-- <li class="nav-item smooth-menu"><a class="nav-link" href="#skills">Skills</a></li> -->
+              <!-- <li class="nav-item smooth-menu"><a class="nav-link" href="#services">Services</a></li>
+              <li class="nav-item smooth-menu"><a class="nav-link" href="#projects">Projects</a></li>
+              <li class="nav-item smooth-menu"><a class="nav-link" href="#contact">Contact</a></li> -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    
+</head>
+
+
+<body>
+  <header class=" text-primary text-center py-3" style="background-color: #28c0e4;">
+    <h2 class="text-light">CBT Online Examination</h2>
+  </header>
+
+  <div class="container mt-4">
+    <div class="text-end">
+      <h5><i class="fas fa-clock"></i> Time Left: <span id="countdown">10:00</span></h5>
+    </div>
+
+    <div class="card p-4 shadow">
+      <h4 id="question-text">Loading question...</h4>
+      <div id="options-container" class="mt-3"></div>
+
+      <div class="mt-4 text-center">
+        <button class="btn btn-secondary" id="prev-btn" disabled>Previous</button>
+        <button class="btn btn-primary" id="next-btn">Next</button>
+        <button class="btn btn-danger" id="quit-btn">Quit Exam</button>
+      </div>
+
+
+
+      <div class="mt-3 text-center">
+        <button class="btn btn-success d-none" id="submit-btn">Submit Exam</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2025 HenaronTech CBT Exams. All rights reserved.</p>
+    </footer>
+
+  <!-- Bootstrap JS & Dependencies -->
+    <script src="bootfiles/jquery-slim.min.js"></script>
+    <script src="bootfiles/popper.min.js"></script>
+    <script src="bootfiles/bootstrap.js"></script>
+    <script src="bootfiles/bootstrap.min.js"></script>
+    <script src="bootfiles/bootstrap.bundle.js"></script>
+    <script src="bootfiles/alert.js"></script>
+
+   
+
+    <!--  Custom JS -->
+    <script src="scripts.js"></script>
+</body>
+</html>
