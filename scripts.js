@@ -379,7 +379,7 @@ function selectAnswer(index) {
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("question-text")) {
     loadQuestion();
-    startCountdown(3600); // One hour = 3600 seconds
+    startCountdown(600); // one minute = 600 seconds
 
     document.getElementById("next-btn").addEventListener("click", () => {
       if (currentQuestionIndex < questions.length - 1) {
