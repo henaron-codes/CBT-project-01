@@ -440,132 +440,100 @@ function submitExam() {
   window.location.href = "result.html";
 }
 
+
+
 // ========== RESULTS PAGE SCRIPT ==========
+document.addEventListener("DOMContentLoaded", function () {
+  const userFirstName = localStorage.getItem("userFirstName") || "";
+  const userLastName = localStorage.getItem("userLastName") || "";
+  const userReg = localStorage.getItem("userReg") || "";
 
-let question = JSON.parse(localStorage.getItem("questions") || "[]");
-let userAnswers = JSON.parse(localStorage.getItem("userAnswers") || "[]");
+  // Set user info
+  document.getElementById("user-name").innerText = `${userFirstName} ${userLastName}`;
+  document.getElementById("user-reg").innerText = userReg;
 
-// Combine questions with user answers
-let combined = questions.map((q, index) => ({
-  ...q,
-  userAnswerIndex: userAnswers[index]
-}));
+  const questions = JSON.parse(localStorage.getItem("questions") || "[]");
+  const userAnswers = JSON.parse(localStorage.getItem("userAnswers") || "[]");
 
-// Shuffle and pick 30 random questions
-combined = combined.sort(() => 0.5 - Math.random()).slice(0, 30);
+  // Combine questions with user answers
+  const combined = questions.map((q, index) => ({
+    ...q,
+    userAnswerIndex: userAnswers[index]
+  }));
 
-// Recalculate score based on selected 30
-const score = combined.filter(q => q.userAnswerIndex === q.answer).length;
-const total = 30;
+  // ✅ Filter out unattempted questions
+  const attempted = combined.filter(q => q.userAnswerIndex !== null && q.userAnswerIndex !== undefined);
 
-// Update UI
-document.getElementById("score").innerText = score;
-document.getElementById("total").innerText = total;
+  // ✅ Randomly select up to 30 attempted questions
+  const selected = attempted.sort(() => 0.5 - Math.random()).slice(0, 30);
 
-const percentage = ((score / total) * 100).toFixed(2);
-const percentageEl = document.getElementById("percentage");
-percentageEl.innerHTML = `<span class="${percentage < 50 ? 'text-danger' : 'text-success'}">${percentage}%</span>`;
-percentageEl.classList.add("fs-3", "fw-bold", "text-center", "d-block");
+  // ✅ Recalculate score
+  const score = selected.filter(q => q.userAnswerIndex === q.answer).length;
+  const total = selected.length;
 
-const resultContainer = document.getElementById("result-container");
-combined.forEach((q, index) => {
-  const userAnswerText = q.userAnswerIndex !== null && q.userAnswerIndex !== undefined
-    ? q.options[q.userAnswerIndex] : "No answer";
-  const correctAnswerText = q.options[q.answer];
-  const isCorrect = q.userAnswerIndex === q.answer;
+  // Update UI
+  document.getElementById("score").innerText = score;
+  document.getElementById("total").innerText = total;
 
-  const questionDiv = document.createElement("div");
-  questionDiv.className = "mb-4 p-3 border rounded";
-  questionDiv.innerHTML = `
-    <p><strong>Q${index + 1}: ${q.question}</strong></p>
-    <p>Your Answer: <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswerText}</span></p>
-    ${!isCorrect ? `<p>Correct Answer: <span class="text-success">${correctAnswerText}</span></p>` : ""}
-  `;
-  resultContainer.appendChild(questionDiv);
+  const percentage = total ? ((score / total) * 100).toFixed(2) : "0.00";
+  const percentageEl = document.getElementById("percentage");
+  percentageEl.innerHTML = `<span class="${percentage < 50 ? 'text-danger' : 'text-success'}">${percentage}%</span>`;
+  percentageEl.classList.add("fs-3", "fw-bold", "text-center", "d-block");
+
+  const resultContainer = document.getElementById("result-container");
+  selected.forEach((q, index) => {
+    const userAnswerText = q.options[q.userAnswerIndex];
+    const correctAnswerText = q.options[q.answer];
+    const isCorrect = q.userAnswerIndex === q.answer;
+
+    const questionDiv = document.createElement("div");
+    questionDiv.className = "mb-4 p-3 border rounded";
+    questionDiv.innerHTML = `
+      <p><strong>Q${index + 1}: ${q.question}</strong></p>
+      <p>Your Answer: <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswerText}</span></p>
+      ${!isCorrect ? `<p>Correct Answer: <span class="text-success">${correctAnswerText}</span></p>` : ""}
+    `;
+    resultContainer.appendChild(questionDiv);
+  });
 });
 
 
+async function downloadAsPDF() {
+  const { jsPDF } = window.jspdf;
+  const resultElement = document.getElementById("resultContent");
+
+  // Take a screenshot of the result section
+  const canvas = await html2canvas(resultElement);
+  const imgData = canvas.toDataURL("image/png");
+
+  // Create a PDF
+  const pdf = new jsPDF({
+    orientation: 'portrait',
+    unit: 'px',
+    format: [canvas.width, canvas.height]
+  });
+
+  // Add the screenshot image to the PDF
+  pdf.addImage(imgData, 'PNG', 0, 0);
+
+  // Save the PDF file
+  pdf.save("Exam_Result.pdf");
+}
 
 
+// navbar toggle
 
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggleBtn = document.getElementById("menuToggle");
+    const icon = document.getElementById("menuIcon");
+    const navbar = document.getElementById("navbarNav");
 
+    toggleBtn.addEventListener("click", () => {
+      setTimeout(() => {
+        const isOpen = navbar.classList.contains("show");
+        icon.className = isOpen ? "fa fa-times" : "fa fa-bars";
+      }, 250); // wait for collapse animation
+    });
+  });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//   if (!document.getElementById("resultContent")) return;
-
-//   const firstName = localStorage.getItem("userFirstName") || "";
-//   const lastName = localStorage.getItem("userLastName") || "";
-//   const regNumber = localStorage.getItem("userReg") || "";
-//   const score = parseInt(localStorage.getItem("userScore")) || 0;
-//   const total = parseInt(localStorage.getItem("totalQuestions")) || 0;
-//   const userAnswers = JSON.parse(localStorage.getItem("userAnswers") || "[]");
-//   const questions = JSON.parse(localStorage.getItem("questions") || "[]");
-
-//   document.getElementById("user-name").innerText = `${firstName} ${lastName}`;
-//   document.getElementById("user-reg").innerText = regNumber;
-//   document.getElementById("score").innerText = score;
-//   document.getElementById("total").innerText = total;
-
-//   const percentage = total ? ((score / total) * 100).toFixed(2) : "0.00";
-//   const percentageEl = document.getElementById("percentage");
-//   percentageEl.innerHTML = `<span class="${percentage < 50 ? 'text-danger' : 'text-success'}">${percentage}%</span>`;
-//   percentageEl.classList.add("fs-3", "fw-bold", "text-center", "d-block");
-
-//   const resultContainer = document.getElementById("result-container");
-
-//   questions.forEach((q, index) => {
-//     const userAnswerIndex = userAnswers[index];
-//     const userAnswerText = userAnswerIndex !== null && userAnswerIndex !== undefined
-//       ? q.options[userAnswerIndex] : "No answer";
-//     const correctAnswerText = q.options[q.answer];
-//     const isCorrect = userAnswerIndex === q.answer;
-
-//     const questionDiv = document.createElement("div");
-//     questionDiv.className = "mb-4 p-3 border rounded";
-//     questionDiv.innerHTML = `
-//       <p><strong>Q${index + 1}: ${q.question}</strong></p>
-//       <p>Your Answer: <span class="${isCorrect ? 'text-success' : 'text-danger'}">${userAnswerText}</span></p>
-//       ${!isCorrect ? `<p>Correct Answer: <span class="text-success">${correctAnswerText}</span></p>` : ""}
-//     `;
-//     resultContainer.appendChild(questionDiv);
-//   });
-// });
-
-// function retakeExam() {
-//   localStorage.clear();
-//   window.location.href = "index.html";
-// }
-
-// async function downloadAsPDF() {
-//   const { jsPDF } = window.jspdf;
-//   const canvas = await html2canvas(document.getElementById("resultContent"));
-//   const imgData = canvas.toDataURL("image/png");
-
-//   const pdf = new jsPDF({
-//     orientation: 'portrait',
-//     unit: 'px',
-//     format: [canvas.width, canvas.height]
-//   });
-
-//   pdf.addImage(imgData, 'PNG', 0, 0);
-//   pdf.save("Exam_Result.pdf");
-// }

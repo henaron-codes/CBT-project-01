@@ -88,6 +88,15 @@ body {
 
 
 
+/* Add to your style.css */
+
+@media (min-width: 768px) {
+  .navbar .navbar-brand {
+    font-size: 1.5rem; /* larger on tablets and up */
+  }
+}
+
+
 @media (max-width: 991.98px) {
   .navbar-nav {
     margin-left: auto !important;
@@ -97,46 +106,17 @@ body {
 }
 
 
+ @media (max-width: 576px) {
+        .henaron {
+          font-size: 14px;
+          margin-left: -230px;
+        }
+
+    }
+
 .container h2, p{
     color: #ffffff;
 }
-
-/* .container img{
-    width: 100px;
-    height: 100px;
-} */
-
-
-/* .quiz{
-    @keyframes quizz{
-        0%{
-            transform:translateY(0);
-            color:#005a48;
-        }
-
-        25%{
-            transform:translateY(-10px);
-            color: #bfb27c;
-        }
-
-        50%{
-            transform:translateY(0);
-            color:#b8d9bd;
-            
-        }
-
-        75%{
-            transform:translateY(0);
-            color:#d3f2ec;
-        }
-
-        100%{
-            transform:translateY(0);
-            color:#ffffff;
-        }
-    }
-} */
-
 
 
 
