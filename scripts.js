@@ -28,6 +28,13 @@ const questions = shuffleArray([
     ],
     answer: 1
   },
+
+  {
+    question: "Born with a silver spoon ?",
+    options: ["Eat with a silver spoon", "Born into a rich family", "Buy a silver spoon", "Use siver spoon instead of a gold spoon"],
+    answer: 1
+  },
+
   {
     question: "The number one citizen in Nigeria is the ?",
     options: ["President", "Governor", "First Lady", "Vice-President"],
@@ -38,6 +45,13 @@ const questions = shuffleArray([
     options: ["Super state", "Sunshine state", "Big heart state", "Food basket state"],
     answer: 1
   },
+
+  {
+    question: "Express 0.002651 t0 1 ?",
+    options: ["0.00265", "0.0027", "0.002", "0.003"],
+    answer: 3
+  },
+
   {
     question: "What part of a plant receives energy directly from the sun ?",
     options: ["Root", "Leaf", "Stem", "Seed"],
@@ -48,6 +62,26 @@ const questions = shuffleArray([
     options: ["Monitor", "Mouse", "Keyboard", "Printer"],
     answer: 2
   },
+
+  {
+    question: "To kick the bucket ?",
+    options: ["To cry", "To die", "To give up", "To fight"],
+    answer: 1
+  },
+
+  {
+    question: "A polygon with 5 sides is ?",
+    options: ["Hexagon", "Pentagon", "Nonagon", "Heptagon"],
+    answer: 1
+  },
+
+
+  {
+    question: "IMITATE means ?",
+    options: ["To speak very loudly", "To be happy", "To act like someone", "Sleeping slowly"],
+    answer: 2
+  },
+
   {
     question: "The Following are Examples of locomotive activities except ?",
     options: ["Bending", "Walking", "Running", "Leaping"],
@@ -63,6 +97,13 @@ const questions = shuffleArray([
     options: ["Judiciary", "Legislature", "Executive", "None of the above"],
     answer: 1
   },
+
+  {
+    question: "INCIDENT means ?",
+    options: ["To feel bad", "A joyful event", "An extra", "A bad event"],
+    answer: 3
+  },
+
   {
     question: "Whose duty is it to arrest criminals in our society ?",
     options: ["Teachers", "Security agents", "Farmers", "Pupils"],
@@ -78,6 +119,19 @@ const questions = shuffleArray([
     options: ["Family", "Union", "Culture", "Marriage"],
     answer: 3
   },
+
+  {
+    question: "GRIEF means ?",
+    options: ["A feeling of sadness", "A feeling of hunger", "A feeling of joy", "A feeling of laughter"],
+    answer: 0
+  },
+
+  {
+    question: "To make ends meet ?",
+    options: ["Tie a rope to another end", "Move from one end to another", "To try one's best to survive", "Climb a rope"],
+    answer: 2
+  },
+
   {
     question: "The best soil for farming is ?",
     options: ["Sandy", "Loamy", "Clay", "Coarse"],
@@ -218,6 +272,13 @@ const questions = shuffleArray([
     options: ["Electricity", "Sun", "Heat", "Cloud"],
     answer: 1
   },
+
+  {
+    question: "What is the place value of 5 in 1468.325 ?",
+    options: ["5 tenths", "5 hundredths", "5 thousandths", "5 ten thousandths"],
+    answer: 2
+  },
+
   {
     question: "This is my beloved son in which I am well ______ ?",
     options: ["satisfied", "concerned", "pleased", "Excited"],
@@ -233,6 +294,13 @@ const questions = shuffleArray([
     options: ["Plants", "Meat", "Kitchen waste", "Stone"],
     answer: 0
   },
+
+  {
+    question: "The man is as proud as a peacock",
+    options: ["antithesis", "metaphor", "simile", "oxymoron"],
+    answer: 2
+  },
+
   {
     question: "Nigeria is divided into ______ regions ?",
     options: ["3", "4", "5", "6"],
@@ -248,6 +316,13 @@ const questions = shuffleArray([
     options: ["10", "10000", "1000", "100"],
     answer: 2
   },
+
+  {
+    question: "The dentist has a severe toothache",
+    options: ["hyperbole", "irony", "oxymoron", "antithesis"],
+    answer: 1
+  },
+
   {
     question: "Which of the following is equal to -10 + 10 ?",
     options: ["10", "0", "1", "None"],
@@ -263,11 +338,25 @@ const questions = shuffleArray([
     options: ["13", "23", "27", "19"],
     answer: 1
   },
+
+  {
+    question: "i prefer beans _____ rice",
+    options: ["than", "from", "to", "at"],
+    answer: 2
+  },
+
   {
     question: "A RECTOR heads ?",
     options: ["University", "Polytechnic", "College of Education", "Grammar School"],
     answer: 1
   },
+
+  {
+    question: "_____ brings civiliian leaders in Nigeria ?",
+    options: ["freedom", "coup", "election", "speech"],
+    answer: 2
+  },
+
   {
     question: "First and Last; January and ______ ?",
     options: ["Saturday", "December", "July", "Friday"],
@@ -278,6 +367,13 @@ const questions = shuffleArray([
     options: ["Olumo rock", "Aso rock", "Idanre rock", "Zuma rock"],
     answer: 3
   },
+
+  {
+    question: "Find the square root of 400 ?",
+    options: ["10", "25", "20", "30"],
+    answer: 2
+  },
+
   {
     question: "which of the planet is the nearest to the sun ?",
     options: ["Pluto", "Mercury", "Jupiter", "Mars"],
@@ -293,11 +389,25 @@ const questions = shuffleArray([
     options: ["East", "West", "South", "North"],
     answer: 1
   },
+
+  {
+    question: "What is the product of 5.2 ?",
+    options: ["6.76", "6.5", "4.0", "3.9"],
+    answer: 0
+  },
+
   {
     question: "Which of these is an input device of a computing system ?",
     options: ["Printer", "Monitor", "Scanner", "Keyboard"],
     answer: 3
   },
+
+  {
+    question: "Ayo shared the food _______ Anastasia and Raymond",
+    options: ["among", "together", "between", "at"],
+    answer: 2
+  },
+
   {
     question: "An example of software used for graphic design is ?",
     options: ["Microsoft Excel", "Corel Draw", "Microsoft Access", "Microsoft Word"],
@@ -308,16 +418,67 @@ const questions = shuffleArray([
     options: ["Henry Arijeniwa", "Elon Musk", "Mark Zuckerberg", "Charles Babbage"],
     answer: 3
   },
+
+  {
+    question: "_____ is the act of giving birth to offspring ?",
+    options: ["growth", "intercourse", "excretion", "reproduction"],
+    answer: 3
+  },
+
+  {
+    question: "A woman is considered mature for marriage at _____ years of age ?",
+    options: ["12", "18", "16", "17"],
+    answer: 1
+  },
+
+  {
+    question: "Express 315 as a percentage",
+    options: ["95%", "80%", "75%", "50%"],
+    answer: 2
+  },
+  
+  {
+    question: "An example of cereal is ?",
+    options: ["oil palm", "maize", "apple", "beans"],
+    answer: 1
+  },
+
+  {
+    question: "Where is the crude oil refined ?",
+    options: ["oceans", "petrol station", "refinery", "rock"],
+    answer: 2
+  },
+
   {
     question: "Separation between husband and wife is called ?",
     options: ["quit notice", "divorce", "quarrel", "ejection"],
     answer: 1
   },
+
+  {
+    question: "Change 0.64 to percentage ?",
+    options: ["46%", "72%", "64%", "37%"],
+    answer: 2
+  },
+
+  {
+    question: "_____ is one of the blood vessels ?",
+    options: ["artery", "navel", "hand", "leg"],
+    answer: 0
+  },
+
   {
     question: "Which of these is responsible for the spread of malaria fever ?",
     options: ["Tse-tsefly", "Butterfly", "Mosquito", "Housefly"],
     answer: 2
   },
+
+  {
+    question: "Moving an object away from you is called ?",
+    options: ["force", "pulling", "pushing", "field"],
+    answer: 2
+  },
+
   {
     question: "The following belong to the reptile family except ?",
     options: ["alligator", "crocodile", "dog", "snake"],
@@ -328,16 +489,54 @@ const questions = shuffleArray([
     options: ["Chinese", "Yoruba", "English", "French"],
     answer: 2
   },
+
+  {
+    question: "Multiply 2.25 by 0.14 ?",
+    options: ["0.0489", "0.03268", "0.0352", "0.3178"],
+    answer: 3
+  },
+
   {
     question: "Where does charity begins at ?",
     options: ["School", "Church", "Home", "Market"],
     answer: 2
   },
+
+  {
+    question: "The female muscular organ in which baby develops is called ?",
+    options: ["ovary", "testes", "organ", "uterus"],
+    answer: 3
+  },
+
+  {
+    question: "The coming together of the northern and southern protectorate is ?",
+    options: ["unity", "togetherness", "amalgamation", "oneness"],
+    answer: 0
+  },
+
   {
     question: "Which of the following animal is used to describe the Nigerian National Football ?",
     options: ["Eagle", "Horse", "Elephant", "Buffalo"],
     answer: 1
-  }
+  },
+
+  {
+    question: "A trader bough an item for ₦1,650 naira and sold it for ₦1,800 naira. Find The profit?",
+    options: ["₦150", "₦250", "₦345", "₦650"],
+    answer: 0
+  },
+
+  {
+    question: "Express 1419 in Roman numerials ?",
+    options: ["MCDXIX", "MCCCCXIX", "MLDXIX", "MCDIX"],
+    answer: 0
+  },
+
+  {
+    question: "Plasma is made up ____ of water ?",
+    options: ["70%", "60%", "50%", "90%"],
+    answer: 3
+  },
 
 ]);
 
@@ -379,7 +578,7 @@ function selectAnswer(index) {
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("question-text")) {
     loadQuestion();
-    startCountdown(61); // one minute = 600 seconds
+    startCountdown(500); // one minute = 600 seconds
 
     document.getElementById("next-btn").addEventListener("click", () => {
       if (currentQuestionIndex < questions.length - 1) {
