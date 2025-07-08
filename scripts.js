@@ -578,7 +578,7 @@ function selectAnswer(index) {
 document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("question-text")) {
     loadQuestion();
-    startCountdown(500); // one minute = 600 seconds
+    startCountdown(62); // one minute = 600 seconds
 
     document.getElementById("next-btn").addEventListener("click", () => {
       if (currentQuestionIndex < questions.length - 1) {
