@@ -109,7 +109,7 @@ p {
 
 .quiz {
   /* color: #; */
-  font-style: oblique;
+  /* font-style: ; */
   /* text-shadow: 0 0 10px rgba(0,255,0,0.8); */
   animation-duration: 2s !important; /* Slower animation */
   font-weight: bolder;
