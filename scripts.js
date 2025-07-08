@@ -46,7 +46,7 @@ const questions = shuffleArray([
   {
     question: "The Part of the Computer System That looks like a typewriter is the ?",
     options: ["Monitor", "Mouse", "Keyboard", "Printer"],
-    answer: 3
+    answer: 2
   },
   {
     question: "The Following are Examples of locomotive activities except ?",
@@ -121,12 +121,12 @@ const questions = shuffleArray([
   {
     question: "The following people are Nigerian nationalist except ?",
     options: ["Obafemi Awolowo", "Herbert Macaulay", "Ojo Samuel", "Nnamdi Azikiwe"],
-    answer: 1
+    answer: 2
   },
   {
     question: "Where was Jesus Christ Crucified ?",
     options: ["Goshen", "Galilee", "Golgotha", "Gethsemane"],
-    answer: 0
+    answer: 2
   },
   {
     question: "A game played by two opposing teams of eleven players is known as ?",
@@ -241,7 +241,7 @@ const questions = shuffleArray([
   {
     question: "How many odd numbers are between 16 and 35 ?",
     options: ["8", "7", "13", "9"],
-    answer: 1
+    answer: 3
   },
   {
     question: "A millenium is ______ years ?",
@@ -256,10 +256,10 @@ const questions = shuffleArray([
   {
     question: "Find the product of 0.04 and 0.08 ?",
     options: ["0.32", "3.2", "32", "3.20"],
-    answer: 1
+    answer: 0
   },
   {
-    question: "What number multiplied by itself gives 289 ?",
+    question: "What number multiplied by itself gives 529 ?",
     options: ["13", "23", "27", "19"],
     answer: 1
   },
